@@ -1,0 +1,11 @@
+{
+    "bot": {
+        "prefix": "l!",
+        "token": ""
+    },
+    "api": {
+        "key": "RGAPI-2d6aa0c4-a562-48c1-8c9e-054cc4784882",
+        "region": "na1",
+        "arv": "americas"
+    }
+}

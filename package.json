@@ -1,0 +1,20 @@
+{
+  "name": "rift",
+  "version": "1.0.0",
+  "description": "A league of legends discord bot.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SpecifiesDev/rift.git"
+  },
+  "author": "SpecifiesDev",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SpecifiesDev/rift/issues"
+  },
+  "homepage": "https://github.com/SpecifiesDev/rift#readme",
+  "dependencies": {
+    "discord": "^0.8.2",
+    "teemojs": "^1.6.1"
+  }
+}
