@@ -23,31 +23,46 @@ let language = manifest.league.language;
 const getChampions = async () => {
     try {
         let response = await axios.get(
-            `http://ddragon.leagueoflegends.com/cdn/${version}/data/${language}/champion.js`
+            `https://ddragon.leagueoflegends.com/cdn/${version}/data/${language}/champion.json?api_key=${manifest.api.key}`
         );
 
-        return response;
+        return response.data;
     } catch (err) {
         return { error: true, msg: err };
     }
 };
 
-const getChampionById = async (id) => {
+const getChampion = async (name) => {
     try {
         let response = await axios.get(
-            `http://ddragon.leagueoflegends.com/cdn/${version}/data/${language}/champion/37?api_key=${manifest.api.key}`
+            `https://ddragon.leagueoflegends.com/cdn/${version}/data/${language}/champion/${name}.json?api_key=${manifest.api.key}`
         );
 
-        return response;
+        return response.data;
     } catch (err) {
         return { error: true, msg: err };
     }
 };
 
 functions.getChampionNameById = async (id, callback) => {
-    let champs = await getChampionById(37);
+    let champs = await getChampions();
 
-    console.log(champs);
+    if (champs.error) return callback(null, champs);
+
+    for (const [key, val] of Object.entries(champs.data)) {
+        if (val.key === id) {
+            callback({ name: val.id, tags: val.tags });
+            break;
+        }
+    }
+};
+
+functions.getChampionDataByName = async (name, callback) => {
+    let champ = await getChampion(name);
+
+    if (name.error) return callback(null, champ);
+
+    console.log(champ);
 };
 
 module.exports = functions;

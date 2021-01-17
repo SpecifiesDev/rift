@@ -5,10 +5,19 @@
     },
     "bot": {
         "prefix": "l!",
-        "token": ""
+        "token": "",
+        "commands": {
+            "info": {
+                "aliases": [
+                    "i",
+                    "profile",
+                    "prof"
+                ]
+            }
+        }
     },
     "api": {
-        "key": "RGAPI-5b4179bb-8707-41d6-8872-a426f49cc4a7",
+        "key": "RGAPI-9b406860-1e82-4016-a0b1-71f0f0c919f9",
         "region": "na1",
         "arv": "americas"
     }

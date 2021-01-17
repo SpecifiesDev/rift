@@ -16,6 +16,7 @@
   "dependencies": {
     "axios": "^0.21.1",
     "discord": "^0.8.2",
+    "discord.js": "^12.5.1",
     "teemojs": "^1.6.1"
   }
 }
