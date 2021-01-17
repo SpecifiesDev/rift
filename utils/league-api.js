@@ -57,7 +57,7 @@ functions.getMatchesBySummonerId = (id, callback) => {
         .then((matches) => {
             if (!matches) return callback(null);
 
-            callback(matches);
+            callback(matches.matches);
         })
         .catch((err) => {
             callback(null, err);
@@ -102,6 +102,9 @@ functions.getAccountIdByName = (name, callback) => {
  * Function to get match data via its id
  * @param {String} id ID of the match
  * @param {Function} callback callback function containing data
+ * I've found conflicting information on how much riot raate limits these endpoints
+ * I'm going to test this in a private environment and see how many matches I can query before
+ * I get a 429. If it's low, I'll have to implement a more strict system with this.
  */
 functions.getMatchById = (id, callback) => {
     api.get(region, "match.getMatch", id)

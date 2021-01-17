@@ -1,10 +1,14 @@
 {
+    "league": {
+        "version": "11.1.1",
+        "language": "en_US"
+    },
     "bot": {
         "prefix": "l!",
         "token": ""
     },
     "api": {
-        "key": "RGAPI-2d6aa0c4-a562-48c1-8c9e-054cc4784882",
+        "key": "RGAPI-5b4179bb-8707-41d6-8872-a426f49cc4a7",
         "region": "na1",
         "arv": "americas"
     }
